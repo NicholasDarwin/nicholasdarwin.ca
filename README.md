@@ -2,13 +2,13 @@
 
 A clean, minimal portfolio website showcasing experience, projects, skills, and awards.
 
-## Overview
+## Overview 
 
 This is a static HTML/CSS/JavaScript website designed to be simple, fast, and easy to maintain. The site features:
 
 - **Home** – Hero section with recent roles (University of Waterloo)
 - **About** – Education and certifications
-- **Experience** – Work history and leadership roles
+- **Experience** – Work history and leadership
 - **Projects** – Featured projects (EV Race Car, Cells in Focus)
 - **Skills** – Technical skills organized by category
 - **Awards** – Awards and honors
