@@ -26,19 +26,20 @@ It highlights education at the **University of Waterloo**, work experience, and 
 - **Easy Customization** – Organized file structure and class naming  
 
 ## File Structure
-Nich's Website/
-├── index.html          # Home page
-├── about.html          # About & education
-├── experience.html     # Work experience
-├── projects.html       # Featured projects
-├── skills.html         # Technical skills
-├── awards.html         # Awards & honors
-├── contact.html        # Contact information
-├── styles.css          # Main stylesheet
-├── script.js           # Simple navigation script
-├── assets/
-│   └── waterloo-logo.svg  # Example logo asset
-└── README.md           # Project documentation
+- Nich's Website/
+  - index.html — Home page
+  - about.html — About & education
+  - experience.html — Work experience
+  - projects.html — Featured projects
+  - skills.html — Technical skills
+  - awards.html — Awards & honors
+  - contact.html — Contact information
+  - styles.css — Main stylesheet
+  - script.js — Simple navigation script
+  - assets/
+    - waterloo-logo.svg — Example logo asset
+  - README.md — Project documentation
+
 
 
 ## Deployment
