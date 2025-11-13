@@ -44,7 +44,7 @@ It highlights education at the **University of Waterloo**, work experience, and 
 
 ## Deployment
 
-The site is deployed on **GitHub Pages** at:  
+The site is deployed on:  
 🔗 [[nicholasdarwin.ca](https://nicholasdarwin.ca/)]
 
 ## Contact
