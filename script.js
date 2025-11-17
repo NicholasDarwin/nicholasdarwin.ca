@@ -51,14 +51,43 @@ function initMobileMenu() {
   });
 }
 
+// Project card reveal using IntersectionObserver (staggered)
+function initProjectAnimations() {
+  const cards = document.querySelectorAll('.projects-grid .project-card');
+  if (!cards || cards.length === 0) return;
+
+  if (!('IntersectionObserver' in window)) {
+    // Fallback: show all
+    cards.forEach(c => c.classList.add('visible'));
+    return;
+  }
+
+  const io = new IntersectionObserver((entries, observer) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.12 });
+
+  cards.forEach((card, i) => {
+    // staggered transition using inline delay
+    card.style.transitionDelay = `${i * 70}ms`;
+    io.observe(card);
+  });
+}
+
 // Initialize when DOM is ready
 if (document.readyState === 'loading') {
   document.addEventListener('DOMContentLoaded', () => {
     setActiveNavLink();
     initMobileMenu();
+    initProjectAnimations();
   });
 } else {
   setActiveNavLink();
   initMobileMenu();
+  initProjectAnimations();
 }
 
