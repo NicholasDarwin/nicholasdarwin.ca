@@ -20,8 +20,32 @@ nav { max-width: 1000px; margin: 0 auto; padding: 0.75rem 1rem; display: flex; a
 .logo { font-weight: 700; color: var(--text); text-decoration: none; font-size: 1.1rem; }
 .hamburger { display: none; background: none; border: none; color: var(--text); font-size: 1.5rem; cursor: pointer; padding: 0.5rem; -webkit-tap-highlight-color: transparent; touch-action: manipulation; }
 .nav-links { display: flex; gap: 1rem; list-style: none; }
-.nav-links a { color: var(--muted); text-decoration: none; padding: 0.25rem 0.5rem; border-radius: 4px; font-size: 0.95rem; }
+.nav-links a {
+  color: var(--muted);
+  text-decoration: none;
+  padding: 0.25rem 0.5rem;
+  border-radius: 4px;
+  font-size: 0.95rem;
+  /* start hidden for fade-in */
+  opacity: 0;
+  transform: translateY(-6px);
+  transition: opacity 260ms ease, transform 260ms cubic-bezier(.2,.9,.2,1);
+}
 .nav-links a.active, .nav-links a:hover { color: var(--accent); }
+
+/* Show nav links when menu is visible (desktop init or mobile active) */
+.nav-links.visible a,
+.nav-links.active a {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Staggered delays for nicer effect */
+.nav-links a:nth-child(1) { transition-delay: 0ms; }
+.nav-links a:nth-child(2) { transition-delay: 60ms; }
+.nav-links a:nth-child(3) { transition-delay: 120ms; }
+.nav-links a:nth-child(4) { transition-delay: 180ms; }
+.nav-links a:nth-child(5) { transition-delay: 240ms; }
 
 /* Mobile menu styles */
 @media (max-width: 768px) {

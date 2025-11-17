@@ -78,16 +78,30 @@ function initProjectAnimations() {
   });
 }
 
+// Nav fade-in initializer
+function initNavFade() {
+  const navMenu = document.getElementById('nav-menu');
+  if (!navMenu) return;
+
+  // Add visible class after a tiny delay so CSS transitions kick in on load
+  setTimeout(() => navMenu.classList.add('visible'), 80);
+
+  // When mobile menu toggles active, ensure links show (CSS handles .active)
+  // Also remove visible when navigating away (handled elsewhere)
+}
+
 // Initialize when DOM is ready
 if (document.readyState === 'loading') {
   document.addEventListener('DOMContentLoaded', () => {
     setActiveNavLink();
     initMobileMenu();
     initProjectAnimations();
+    initNavFade();
   });
 } else {
   setActiveNavLink();
   initMobileMenu();
   initProjectAnimations();
+  initNavFade();
 }
 
