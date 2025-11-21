@@ -191,7 +191,7 @@ body.home-page .recent-roles {
 
 /* Recent roles component (white horizontal cards) */
 .recent-roles { background: #ffffff; padding: 1rem; border-radius: 8px; margin-bottom: 1rem; border: 1px solid #eef2f7; }
-.recent-title { font-size: 1.1rem; font-weight: 700; color: var(--accent); margin-bottom: 0.75rem; text-transform: none; }
+.recent-title { font-size: 1.1rem; font-weight: 700; color: #000; margin-bottom: 0.75rem; text-transform: none; }
 .roles-list { display: flex; flex-direction: column; gap: 0.75rem; }
 .role-card { display: flex; align-items: center; justify-content: space-between; background: #fff; border: 1px solid #e6edf3; padding: 0.75rem; border-radius: 10px; box-shadow: 0 1px 0 rgba(16,24,40,0.03); }
 .role-left { display: flex; align-items: center; gap: 0.75rem; }
