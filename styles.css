@@ -277,7 +277,7 @@ body.home-page .recent-roles {
 .theme-toggle {
   position: absolute;
   top: 50%;
-  right: 4.5rem;
+  right: 1rem;
   transform: translateY(-50%);
   width: 40px;
   height: 40px;
@@ -314,17 +314,21 @@ body.home-page .recent-roles {
 
 @media (max-width: 768px) {
   .theme-toggle {
-    top: 50%;
-    right: 3.5rem;
-    transform: translateY(-50%);
-    width: 36px;
-    height: 36px;
+    position: fixed;
+    top: auto;
+    bottom: 1rem;
+    right: 1rem;
+    transform: none;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    z-index: 998;
   }
   .theme-toggle:active {
-    transform: translateY(-50%) scale(0.95);
+    transform: scale(0.95);
   }
   .theme-toggle svg {
-    width: 18px;
-    height: 18px;
+    width: 22px;
+    height: 22px;
   }
 }
