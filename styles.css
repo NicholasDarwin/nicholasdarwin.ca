@@ -76,10 +76,31 @@ nav { max-width: 1000px; margin: 0 auto; padding: 0.75rem 1rem; display: flex; a
 /* Mobile menu styles */
 @media (max-width: 768px) {
   .hamburger { display: block; }
-  .nav-links { position: absolute; top: 100%; left: 0; right: 0; background: var(--header-bg); flex-direction: column; gap: 0; list-style: none; max-height: 0; overflow: hidden; transition: max-height 0.3s ease-out; border-bottom: 1px solid var(--header-border); z-index: 1000; }
+  .nav-links { 
+    position: absolute; 
+    top: 100%; 
+    left: 0; 
+    right: 0; 
+    background: var(--header-bg); 
+    flex-direction: column; 
+    gap: 0; 
+    list-style: none; 
+    max-height: 0; 
+    overflow: hidden; 
+    transition: max-height 0.3s ease-out, background-color 0.3s ease; 
+    border-bottom: 1px solid var(--header-border); 
+    z-index: 999; 
+  }
   .nav-links.active { max-height: 300px; }
+  .nav-links.active a { opacity: 1; transform: translateY(0); }
   .nav-links li { padding: 0; }
-  .nav-links a { display: block; padding: 0.75rem 1rem; border-radius: 0; }
+  .nav-links a { 
+    display: block; 
+    padding: 0.75rem 1rem; 
+    border-radius: 0; 
+    opacity: 1;
+    transform: translateY(0);
+  }
   .nav-links a.active { color: var(--accent); background: var(--subtle-bg); }
 }
 
@@ -254,9 +275,10 @@ body.home-page .recent-roles {
 
 /* Theme Toggle Button */
 .theme-toggle {
-  position: fixed;
-  top: 1rem;
-  right: 1rem;
+  position: absolute;
+  top: 50%;
+  right: 4.5rem;
+  transform: translateY(-50%);
   width: 40px;
   height: 40px;
   border-radius: 8px;
@@ -268,16 +290,15 @@ body.home-page .recent-roles {
   justify-content: center;
   box-shadow: 0 2px 8px rgba(0,0,0,0.1);
   transition: transform 0.2s ease, box-shadow 0.2s ease, background-color 0.3s ease, border-color 0.3s ease;
-  z-index: 1000;
+  z-index: 1001;
 }
 
 .theme-toggle:hover {
-  transform: translateY(-2px);
   box-shadow: 0 4px 12px rgba(0,0,0,0.15);
 }
 
 .theme-toggle:active {
-  transform: translateY(0);
+  transform: translateY(-50%) scale(0.95);
 }
 
 .theme-toggle svg {
@@ -291,12 +312,16 @@ body.home-page .recent-roles {
   transition: stroke 0.3s ease;
 }
 
-@media (max-width: 600px) {
+@media (max-width: 768px) {
   .theme-toggle {
-    top: 0.75rem;
-    right: 0.75rem;
+    top: 50%;
+    right: 3.5rem;
+    transform: translateY(-50%);
     width: 36px;
     height: 36px;
+  }
+  .theme-toggle:active {
+    transform: translateY(-50%) scale(0.95);
   }
   .theme-toggle svg {
     width: 18px;
