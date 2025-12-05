@@ -1,5 +1,10 @@
 /* Simple, minimal stylesheet for a lightweight site */
 * { box-sizing: border-box; margin: 0; padding: 0; }
+
+html {
+  scroll-behavior: smooth;
+}
+
 :root {
   --bg: #ffffff;
   --text: #111827;
@@ -43,8 +48,10 @@ h1, h2, h3, .section-title, .recent-title {
 }
 header { background: var(--header-bg); border-bottom: 1px solid var(--header-border); transition: background-color 0.3s ease, border-color 0.3s ease; }
 nav { max-width: 1000px; margin: 0 auto; padding: 0.75rem 1rem; display: flex; align-items: center; justify-content: space-between; position: relative; }
-.logo { font-weight: 700; color: var(--text); text-decoration: none; font-size: 1.1rem; }
-.hamburger { display: none; background: none; border: none; color: var(--text); font-size: 1.5rem; cursor: pointer; padding: 0.5rem; -webkit-tap-highlight-color: transparent; touch-action: manipulation; }
+.logo { font-weight: 700; color: var(--text); text-decoration: none; font-size: 1.1rem; transition: color 0.3s ease; }
+.logo:hover { color: var(--accent); }
+.hamburger { display: none; background: none; border: none; color: var(--text); font-size: 1.5rem; cursor: pointer; padding: 0.5rem; -webkit-tap-highlight-color: transparent; touch-action: manipulation; transition: color 0.3s ease; }
+.hamburger:hover { color: var(--accent); }
 .nav-links { display: flex; gap: 1rem; list-style: none; }
 .nav-links a {
   color: var(--muted);
@@ -55,9 +62,9 @@ nav { max-width: 1000px; margin: 0 auto; padding: 0.75rem 1rem; display: flex; a
   /* start hidden for fade-in */
   opacity: 0;
   transform: translateY(-6px);
-  transition: opacity 260ms ease, transform 260ms cubic-bezier(.2,.9,.2,1);
+  transition: opacity 260ms ease, transform 260ms cubic-bezier(.2,.9,.2,1), color 0.3s ease, background-color 0.3s ease;
 }
-.nav-links a.active, .nav-links a:hover { color: var(--accent); }
+.nav-links a.active, .nav-links a:hover { color: var(--accent); background: var(--subtle-bg); }
 
 /* Show nav links when menu is visible (desktop init or mobile active) */
 .nav-links.visible a,
@@ -109,12 +116,13 @@ main { max-width: 1000px; margin: 2.5rem auto; padding: 0 1rem; }
 .hero h1 { font-size: 2rem; margin-bottom: 0.5rem; color: var(--accent); }
 .hero .subtitle { color: var(--muted); margin-bottom: 1rem; }
 .contact-info { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
-.contact-info a { color: var(--text); text-decoration: none; font-weight: 500; transition: color 0.3s ease; }
-.contact-info a:hover { color: var(--accent); }
+.contact-info a { color: var(--text); text-decoration: none; font-weight: 500; transition: all 0.3s ease; }
+.contact-info a:hover { color: var(--accent); transform: translateY(-2px); }
 
 section { margin: 2rem 0; }
 .section-title { text-align: left; font-weight: 700; margin-bottom: 1rem; font-size: 1.25rem; color: var(--accent); }
-.card { background: var(--card-bg); border: 1px solid var(--card-border); border-radius: 8px; padding: 1rem; margin-bottom: 1rem; color: var(--text); transition: background-color 0.3s ease, border-color 0.3s ease; }
+.card { background: var(--card-bg); border: 1px solid var(--card-border); border-radius: 8px; padding: 1rem; margin-bottom: 1rem; color: var(--text); transition: all 0.3s ease; }
+.card:hover { transform: translateY(-2px); box-shadow: 0 4px 8px rgba(0,0,0,0.08); border-color: var(--accent); }
 .card h3 { margin-bottom: 0.5rem; font-size: 1rem; color: var(--accent); }
 .card h4 { margin-bottom: 0.25rem; font-size: 0.95rem; color: var(--text); }
 .date { color: var(--muted); font-size: 0.9rem; margin-bottom: 0.5rem; }
@@ -123,7 +131,8 @@ section { margin: 2rem 0; }
 .card ul li { padding: 0.35rem 0; margin-left: 0; }
 .projects-grid, .skills-grid, .awards-grid { display: grid; gap: 1.5rem; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); }
 .skill-tags, .project-tech { display: flex; flex-wrap: wrap; gap: 0.5rem; }
-.skill-tag, .tech-tag { font-size: 0.85rem; color: var(--muted); background: var(--subtle-bg); border: 1px solid var(--subtle-border); padding: 0.35rem 0.65rem; border-radius: 999px; white-space: nowrap; }
+.skill-tag, .tech-tag { font-size: 0.85rem; color: var(--muted); background: var(--subtle-bg); border: 1px solid var(--subtle-border); padding: 0.35rem 0.65rem; border-radius: 999px; white-space: nowrap; transition: all 0.3s ease; cursor: default; }
+.skill-tag:hover, .tech-tag:hover { background: var(--card-bg); border-color: var(--accent); color: var(--accent); transform: scale(1.05); }
 
 /* Project card styling and fade-in animation */
 .project-card {
@@ -241,7 +250,8 @@ body.home-page .recent-roles {
 .recent-roles { background: var(--card-bg); padding: 1rem; border-radius: 8px; margin-bottom: 1rem; border: 1px solid var(--card-border); transition: background-color 0.3s ease, border-color 0.3s ease; }
 .recent-title { font-size: 1.1rem; font-weight: 700; color: var(--text); margin-bottom: 0.75rem; text-transform: none; }
 .roles-list { display: flex; flex-direction: column; gap: 0.75rem; }
-.role-card { display: flex; align-items: center; justify-content: space-between; background: var(--card-bg); border: 1px solid var(--card-border); padding: 0.75rem; border-radius: 10px; box-shadow: 0 1px 0 rgba(16,24,40,0.03); transition: background-color 0.3s ease, border-color 0.3s ease; }
+.role-card { display: flex; align-items: center; justify-content: space-between; background: var(--card-bg); border: 1px solid var(--card-border); padding: 0.75rem; border-radius: 10px; box-shadow: 0 1px 0 rgba(16,24,40,0.03); transition: all 0.3s ease; cursor: pointer; }
+.role-card:hover { transform: translateY(-2px); box-shadow: 0 4px 8px rgba(0,0,0,0.1); border-color: var(--accent); }
 .role-left { display: flex; align-items: center; gap: 0.75rem; }
 .role-logo { width: 44px; height: 44px; border-radius: 8px; background: var(--subtle-bg); display: flex; align-items: center; justify-content: center; color: var(--muted); font-weight: 700; font-size: 1rem; border: 1px solid var(--subtle-border); object-fit: cover; }
 .role-info { display: flex; flex-direction: column; }
@@ -260,9 +270,11 @@ body.home-page .recent-roles {
 .contact-section .section-title { text-align: left; }
 .intro-text { font-size: 1.05rem; color: var(--muted); margin-bottom: 1.25rem; }
 .contact-links { display: flex; gap: 0.75rem; flex-wrap: wrap; margin-bottom: 1rem; justify-content: flex-start; }
-.contact-link { display: inline-block; padding: 0.6rem 1rem; border-radius: 8px; text-decoration: none; font-weight: 600; font-size: 0.95rem; }
+.contact-link { display: inline-block; padding: 0.6rem 1rem; border-radius: 8px; text-decoration: none; font-weight: 600; font-size: 0.95rem; transition: all 0.3s ease; }
 .contact-link.primary { background: var(--accent); color: #fff; border: 1px solid transparent; }
+.contact-link.primary:hover { transform: translateY(-2px); box-shadow: 0 4px 12px rgba(11,102,255,0.3); }
 .contact-link.ghost { background: transparent; color: var(--accent); border: 1px solid rgba(11,102,255,0.12); }
+.contact-link.ghost:hover { background: var(--subtle-bg); border-color: var(--accent); }
 .get-in-touch { margin-top: 1.5rem; padding: 1.25rem; background: var(--subtle-bg); color: var(--text); border: 1px solid var(--subtle-border); border-radius: 10px; transition: background-color 0.3s ease, border-color 0.3s ease; }
 .get-in-touch h3 { margin-bottom: 0.5rem; color: var(--accent); font-size: 1rem; }
 .get-in-touch p { color: var(--muted); line-height: 1.6; }
