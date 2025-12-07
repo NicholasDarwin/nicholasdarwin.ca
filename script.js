@@ -127,6 +127,22 @@ function initNavFade() {
 }
 
 // Initialize when DOM is ready
+// Parallax scroll effect for background grid
+function initParallaxScroll() {
+  let ticking = false;
+  
+  window.addEventListener('scroll', () => {
+    if (!ticking) {
+      window.requestAnimationFrame(() => {
+        const scrollY = window.pageYOffset || document.documentElement.scrollTop;
+        document.documentElement.style.setProperty('--scroll-y', scrollY);
+        ticking = false;
+      });
+      ticking = true;
+    }
+  });
+}
+
 if (document.readyState === 'loading') {
   document.addEventListener('DOMContentLoaded', () => {
     setActiveNavLink();
@@ -134,6 +150,7 @@ if (document.readyState === 'loading') {
     initMobileMenu();
     initProjectAnimations();
     initNavFade();
+    initParallaxScroll();
   });
 } else {
   setActiveNavLink();
@@ -141,5 +158,6 @@ if (document.readyState === 'loading') {
   initMobileMenu();
   initProjectAnimations();
   initNavFade();
+  initParallaxScroll();
 }
 
