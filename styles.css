@@ -48,28 +48,6 @@ body {
   position: relative;
 }
 
-body::before {
-  content: '';
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-image: 
-    linear-gradient(45deg, var(--grid-light) 25%, transparent 25%),
-    linear-gradient(-45deg, var(--grid-light) 25%, transparent 25%),
-    linear-gradient(45deg, transparent 75%, var(--grid-dark) 75%),
-    linear-gradient(-45deg, transparent 75%, var(--grid-dark) 75%);
-  background-size: 40px 40px;
-  background-position: 0 0, 0 20px, 20px -20px, -20px 0px;
-  background-attachment: scroll;
-  transform: translateY(calc(var(--scroll-y, 0) * -0.3px));
-  pointer-events: none;
-  z-index: -1;
-  opacity: 0.4;
-  transition: background-image 0.8s ease, opacity 0.8s ease;
-  will-change: transform;
-}
 /* Formal heading font */
 h1, h2, h3, .section-title, .recent-title {
   font-family: 'Playfair Display', 'Merriweather', serif;
@@ -152,17 +130,20 @@ main { max-width: 1000px; margin: 2.5rem auto; padding: 0 1rem; }
 section { margin: 2rem 0; }
 .section-title { text-align: left; font-weight: 700; margin-bottom: 2rem; font-size: 1.5rem; color: var(--text); border-bottom: 2px solid var(--accent); padding-bottom: 0.5rem; }
 
+/* Fancy name styling */
+.fancy-name { font-family: 'Playfair Display', serif; font-size: 2.5rem; color: var(--accent); text-align: center; margin-bottom: 1.5rem; font-style: italic; letter-spacing: 0.05em; }
+
 /* Clean experience list styling */
-.experience-list { display: flex; flex-direction: column; gap: 2.5rem; }
-.experience-item { border-bottom: 1px solid var(--card-border); padding-bottom: 2rem; }
+.experience-list { display: flex; flex-direction: column; gap: 1.5rem; }
+.experience-item { border-bottom: 1px solid var(--card-border); padding-bottom: 1.25rem; }
 .experience-item:last-child { border-bottom: none; }
-.experience-header { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 1rem; gap: 1rem; }
+.experience-header { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 0.5rem; gap: 1rem; }
 .experience-header h3 { font-size: 1.15rem; font-weight: 700; color: var(--text); margin: 0; line-height: 1.4; }
-.experience-header .company { color: var(--accent); font-weight: 600; margin: 0.25rem 0 0 0; font-size: 1rem; }
-.experience-header .location { color: var(--muted); font-size: 0.9rem; margin: 0.25rem 0 0 0; }
+.experience-header .company { color: var(--accent); font-weight: 600; margin: 0.15rem 0 0 0; font-size: 1rem; }
+.experience-header .location { color: var(--muted); font-size: 0.9rem; margin: 0.15rem 0 0 0; }
 .experience-header .date { color: var(--muted); font-size: 0.9rem; white-space: nowrap; font-weight: 500; }
-.experience-details { list-style: disc; margin: 1rem 0 0 1.25rem; padding: 0; }
-.experience-details li { color: var(--text); line-height: 1.7; margin-bottom: 0.5rem; padding-left: 0.25rem; }
+.experience-details { list-style: disc; margin: 0.5rem 0 0 1.25rem; padding: 0; }
+.experience-details li { color: var(--text); line-height: 1.5; margin-bottom: 0.25rem; padding-left: 0.25rem; }
 .project-description { color: var(--text); line-height: 1.7; margin: 0.75rem 0; }
 .project-tech-inline { color: var(--muted); font-size: 0.95rem; margin: 0.5rem 0; }
 .project-links { display: flex; gap: 1rem; margin-top: 1rem; }
