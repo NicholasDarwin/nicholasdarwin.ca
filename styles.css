@@ -230,7 +230,7 @@ body.home-page .recent-roles {
 .role-left { display: flex; align-items: center; gap: 0.75rem; }
 .role-logo { width: 44px; height: 44px; border-radius: 8px; background: var(--subtle-bg); display: flex; align-items: center; justify-content: center; color: var(--muted); font-weight: 700; font-size: 1rem; border: 1px solid var(--subtle-border); object-fit: cover; }
 .role-info { display: flex; flex-direction: column; }
-.role-company { font-weight: 700; color: var(--accent); text-transform: lowercase; }
+.role-company { font-weight: 700; color: var(--accent); }
 .role-position { color: var(--muted); font-size: 0.95rem; }
 .role-date { color: var(--muted); font-size: 0.95rem; white-space: nowrap; margin-left: 1rem; }
 
