@@ -6,7 +6,7 @@ html {
 }
 
 :root {
-  --bg: #ffffff;
+  --bg: #fffaeb;
   --text: #111827;
   --muted: #6b7280;
   --accent: #0b66ff; /* maps to previous --neon-blue for small inline uses */
@@ -23,17 +23,17 @@ html {
 
 /* Dark mode colors */
 [data-theme="dark"] {
-  --bg: #0f172a;
+  --bg: #133c4f;
   --text: #e2e8f0;
   --muted: #94a3b8;
   --accent: #ef4444;
   --accent2: #dc2626;
-  --header-bg: #1e293b;
-  --header-border: #334155;
-  --card-bg: #1e293b;
-  --card-border: #334155;
-  --subtle-bg: #1e293b;
-  --subtle-border: #334155;
+  --header-bg: #216691;
+  --header-border: #216691;
+  --card-bg: #216691;
+  --card-border: #216691;
+  --subtle-bg: #216691;
+  --subtle-border: #216691;
   --grid-light: #1a2332;
   --grid-dark: #141b28;
 }
@@ -160,11 +160,14 @@ section { margin: 2rem 0; }
 .projects-grid .project-card { will-change: opacity, transform; }
 
 /* Featured Projects Section */
-.featured-projects { background: var(--subtle-bg); padding: 2rem 1rem; border-radius: 12px; margin: 2rem 0; border: 1px solid var(--subtle-border); animation: fadeInUp 0.8s ease-out 0.5s both; }
+.featured-projects { background: var(--subtle-bg); padding: 2rem 1rem; border-radius: 12px; margin: 2rem 0 0.5rem 0; border: 1px solid var(--subtle-border); animation: fadeInUp 0.8s ease-out 0.5s both; }
 .featured-projects .section-title { margin-top: 0; margin-bottom: 1.5rem; }
 .projects-grid { display: grid; grid-template-columns: 1fr; gap: 1.5rem; }
 .project-card { background: var(--card-bg); border: 1px solid var(--card-border); border-radius: 10px; padding: 1.5rem; transition: all 0.3s ease; animation: fadeInUp 0.8s ease-out 0.6s both; }
 .project-card:hover { box-shadow: 0 4px 12px rgba(0,0,0,0.1); transform: translateY(-2px); border-color: var(--accent); }
+
+[data-theme="dark"] .project-card { background: #133c4f; border-color: #1a5a7f; }
+
 .project-card h3 { font-size: 1.25rem; font-weight: 700; color: var(--text); margin: 0 0 0.5rem 0; }
 .project-card .project-meta { color: var(--accent); font-weight: 600; font-size: 0.95rem; margin-bottom: 1rem; }
 .project-highlights { list-style: disc; margin: 1rem 0; padding-left: 1.25rem; }
@@ -224,6 +227,9 @@ body.home-page .recent-roles {
 .role-card-link { text-decoration: none; color: inherit; display: block; }
 .role-card { display: flex; align-items: center; justify-content: space-between; background: var(--card-bg); border: 1px solid var(--card-border); padding: 0.75rem; border-radius: 10px; box-shadow: 0 1px 0 rgba(16,24,40,0.03); transition: all 0.3s ease; cursor: pointer; }
 .role-card:hover { transform: translateY(-2px); box-shadow: 0 4px 8px rgba(0,0,0,0.1); border-color: var(--accent); }
+
+[data-theme="dark"] .role-card { background: #133c4f; border-color: #1a5a7f; }
+
 .role-left { display: flex; align-items: center; gap: 0.75rem; }
 .role-logo { width: 44px; height: 44px; border-radius: 8px; background: var(--subtle-bg); display: flex; align-items: center; justify-content: center; color: var(--muted); font-weight: 700; font-size: 1rem; border: 1px solid var(--subtle-border); object-fit: cover; }
 .role-info { display: flex; flex-direction: column; }
