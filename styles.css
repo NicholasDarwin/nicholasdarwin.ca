@@ -137,11 +137,11 @@ section { margin: 2rem 0; }
 .experience-list { display: flex; flex-direction: column; gap: 1.5rem; }
 .experience-item { border-bottom: 1px solid var(--card-border); padding-bottom: 1.25rem; }
 .experience-item:last-child { border-bottom: none; }
-.experience-header { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 0.5rem; gap: 1rem; }
+.experience-header { display: block; margin-bottom: 0.5rem; }
 .experience-header h3 { font-size: 1.15rem; font-weight: 700; color: var(--text); margin: 0; line-height: 1.4; }
 .experience-header .company { color: var(--accent); font-weight: 600; margin: 0.15rem 0 0 0; font-size: 1rem; }
 .experience-header .location { color: var(--muted); font-size: 0.9rem; margin: 0.15rem 0 0 0; }
-.experience-header .date { color: var(--muted); font-size: 0.9rem; white-space: nowrap; font-weight: 500; }
+.experience-header .date { color: var(--muted); font-size: 0.9rem; white-space: nowrap; font-weight: 500; margin-top: 0.15rem; }
 .experience-details { list-style: disc; margin: 0.5rem 0 0 1.25rem; padding: 0; }
 .experience-details li { color: var(--text); line-height: 1.5; margin-bottom: 0.25rem; padding-left: 0.25rem; }
 .project-description { color: var(--text); line-height: 1.7; margin: 0.75rem 0; }
@@ -152,7 +152,7 @@ section { margin: 2rem 0; }
 
 @media (max-width: 768px) {
   .experience-header { flex-direction: column; }
-  .experience-header .date { align-self: flex-start; }
+  .experience-header .date { align-self: flex-end; }
 }
 
 .project-card.visible { opacity: 1; transform: translateY(0); }
@@ -160,10 +160,10 @@ section { margin: 2rem 0; }
 .projects-grid .project-card { will-change: opacity, transform; }
 
 /* Featured Projects Section */
-.featured-projects { background: var(--subtle-bg); padding: 2rem 1rem; border-radius: 12px; margin: 2rem 0; border: 1px solid var(--subtle-border); }
+.featured-projects { background: var(--subtle-bg); padding: 2rem 1rem; border-radius: 12px; margin: 2rem 0; border: 1px solid var(--subtle-border); animation: fadeInUp 0.8s ease-out 0.5s both; }
 .featured-projects .section-title { margin-top: 0; margin-bottom: 1.5rem; }
 .projects-grid { display: grid; grid-template-columns: 1fr; gap: 1.5rem; }
-.project-card { background: var(--card-bg); border: 1px solid var(--card-border); border-radius: 10px; padding: 1.5rem; transition: all 0.3s ease; }
+.project-card { background: var(--card-bg); border: 1px solid var(--card-border); border-radius: 10px; padding: 1.5rem; transition: all 0.3s ease; animation: fadeInUp 0.8s ease-out 0.6s both; }
 .project-card:hover { box-shadow: 0 4px 12px rgba(0,0,0,0.1); transform: translateY(-2px); border-color: var(--accent); }
 .project-card h3 { font-size: 1.25rem; font-weight: 700; color: var(--text); margin: 0 0 0.5rem 0; }
 .project-card .project-meta { color: var(--accent); font-weight: 600; font-size: 0.95rem; margin-bottom: 1rem; }
