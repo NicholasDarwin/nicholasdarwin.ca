@@ -48,11 +48,23 @@ body {
   position: relative;
 }
 
+/* Canvas for rainfall animation */
+#rainfall-canvas {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 0;
+  background: transparent;
+}
+
 /* Formal heading font */
 h1, h2, h3, .section-title, .recent-title {
   font-family: 'Playfair Display', 'Merriweather', serif;
 }
-header { background: var(--header-bg); border-bottom: 1px solid var(--header-border); transition: background-color 0.3s ease, border-color 0.3s ease; }
+header { background: var(--header-bg); border-bottom: 1px solid var(--header-border); transition: background-color 0.3s ease, border-color 0.3s ease; position: relative; z-index: 10; }
 nav { max-width: 1000px; margin: 0 auto; padding: 0.75rem 1rem; display: flex; align-items: center; justify-content: space-between; position: relative; }
 .logo { font-weight: 700; color: var(--text); text-decoration: none; font-size: 1.1rem; transition: color 0.3s ease; }
 .logo:hover { color: var(--accent); }
@@ -117,7 +129,7 @@ nav { max-width: 1000px; margin: 0 auto; padding: 0.75rem 1rem; display: flex; a
   .nav-links a.active { color: var(--accent); background: var(--subtle-bg); }
 }
 
-main { max-width: 1000px; margin: 2.5rem auto; padding: 0 1rem; }
+main { max-width: 1000px; margin: 2.5rem auto; padding: 0 1rem; position: relative; z-index: 1; }
 .hero { text-align: center; padding: 3rem 1rem; }
 .hero h1 { font-size: 2rem; margin-bottom: 0.5rem; color: var(--accent); }
 .hero .subtitle { color: var(--muted); margin-bottom: 1rem; }
