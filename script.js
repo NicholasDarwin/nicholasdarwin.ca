@@ -265,8 +265,8 @@ class Particle {
       // Dark mode: draw star with red/accent color
       this.drawStar(ctx, '#ef4444'); // Use dark mode accent color
     } else {
-      // Light mode: draw raindrop with blue/accent color
-      this.drawRaindrop(ctx, '#0b66ff'); // Use light mode accent color
+      // Light mode: draw star with blue/accent color
+      this.drawStar(ctx, '#0b66ff'); // Use light mode accent color
     }
   }
 }
