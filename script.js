@@ -241,7 +241,7 @@ class Particle {
     ctx.translate(this.x, this.y);
     ctx.fillStyle = color;
 
-    const points = 5;
+    const points = 10;
     const outerRadius = this.size;
     const innerRadius = this.size * 0.4;
 
