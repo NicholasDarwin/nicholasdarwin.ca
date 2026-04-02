@@ -185,22 +185,23 @@ class Particle {
     let vx = this.vx;
     let vy = this.vy;
     
-    // Adjust horizontal velocity based on cursor position
+    // Adjust direction based on cursor position, but keep speed constant
     if (cursorX !== null) {
-      // Map cursor position (0 to canvas.width) to angle adjustment (-90 to +90 degrees from base)
       const centerX = this.canvas.width / 2;
       const cursorNormalized = (cursorX - centerX) / centerX; // -1 to 1
       
-      // Base angle is 50 degrees left, adjust from there
-      // Left side of screen: more left (increase angle to 90 degrees)
-      // Right side of screen: less left (decrease angle, maybe go right)
-      const angleAdjustment = cursorNormalized * 80; // 80 degree range
-      const finalAngle = 50 + angleAdjustment; // -30 to 130 degrees
+      // Map cursor to angle (-50 to 50 degrees from vertical)
+      // Left side: 50 degrees left, Right side: 50 degrees right
+      const angleAdjustment = cursorNormalized * 50; // -50 to 50 degrees
       
-      // Convert to radians and calculate velocity
-      const angleRad = finalAngle * (Math.PI / 180);
-      vx = -1.0 * Math.cos(angleRad); // Negative cos for leftward
-      vy = 1.0 * Math.sin(angleRad); // Positive sin for downward
+      // Convert to radians
+      const angleRad = (angleAdjustment) * (Math.PI / 180);
+      
+      // Calculate velocity components maintaining constant speed
+      // Base speed magnitude is ~1.0 (from sqrt(vx^2 + vy^2) where vx=-0.64, vy=0.77)
+      const speed = 1.0;
+      vx = Math.sin(angleRad) * speed; // Horizontal component
+      vy = Math.cos(angleRad) * speed; // Vertical component (always positive/downward)
     }
     
     this.x += vx * this.speed;
