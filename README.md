@@ -1,59 +1,71 @@
-# Nicholas Darwin – Personal Website
+# Nicholas Darwin – Portfolio Website
 
-A clean, minimal personal portfolio showcasing experience, projects, skills, and achievements.
+A clean, fast, and modern personal portfolio built with HTML, CSS, and TypeScript.
 
-## Overview
+## About
 
-This is a static HTML/CSS/JavaScript website built for simplicity, speed, and clarity.  
-It highlights education at the **University of Waterloo**, work experience, and technical projects.
+This is a static website showcasing my work as a Computer Science student at the **University of Waterloo**, with a focus on software development, engineering, and innovation.
 
-### Sections
+## Pages
 
-- **Home** – Hero section with introduction and recent roles  
-- **About** – Education and certifications  
-- **Experience** – Work history and leadership roles  
-- **Projects** – Featured work (e.g., EV Race Car, Cells in Focus)  
-- **Skills** – Technical proficiencies organized by category  
-- **Awards** – Recognitions and honors  
-- **Contact** – Links to email, LinkedIn, and Instagram  
+- **Home** – Introduction and quick overview of key roles
+- **Experience** – Professional and leadership experience
+- **Projects** – Featured engineering and software projects
+- **Contact** – Get in touch via email or social media
+
+## Tech Stack
+
+- **HTML/CSS** – Semantic markup and responsive styling
+- **TypeScript** – Compiled to vanilla JavaScript
+- **Static Hosting** – Fast, secure, and reliable
 
 ## Features
 
-- **Minimal Design** – Clean, readable, and distraction-free  
-- **Responsive Layout** – Optimized for desktop, tablet, and mobile  
-- **Lightweight Stack** – Pure HTML, CSS, and JavaScript (no frameworks)  
-- **Fast Load Times** – Minimal scripts and optimized CSS  
-- **Easy Customization** – Organized file structure and class naming  
+- Fully responsive design (mobile, tablet, desktop)
+- Lightweight and fast loading
+- No external frameworks or dependencies
+- Easy to customize and deploy
 
-## File Structure
-- Nich's Website/
-  - index.html — Home page
-  - about.html — About & education
-  - experience.html — Work experience
-  - projects.html — Featured projects
-  - skills.html — Technical skills
-  - awards.html — Awards & honors
-  - contact.html — Contact information
-  - styles.css — Main stylesheet
-  - script.js — Simple navigation script
-  - assets/
-    - waterloo-logo.svg — Example logo asset
-  - README.md — Project documentation
+## Project Structure
 
+```
+├── index.html              # Home page
+├── html/
+│   ├── experience.html     # Work & leadership experience
+│   ├── projects.html       # Featured projects
+│   └── contact.html        # Contact information
+├── src/
+│   └── script.ts           # TypeScript source
+├── script.js               # Compiled JavaScript
+├── styles.css              # Main stylesheet
+├── assets/                 # Images and logos
+└── README.md               # This file
+```
 
+## Development
+
+### Compile TypeScript
+```bash
+npm run build       # Compile once
+npm run watch       # Watch for changes
+```
+
+### Run Locally
+```bash
+npx http-server -p 8080 -o
+```
 
 ## Deployment
 
-The site is deployed on:  
-🔗 [[nicholasdarwin.ca](https://nicholasdarwin.ca/)]
+Live at: https://nicholasdarwin.ca
 
 ## Contact
 
-📧 **Email:** ndarwin@uwaterloo.ca  
-🔗 **LinkedIn:** [linkedin.com/in/nicholas-darwin](https://linkedin.com/in/nicholas-darwin)  
-📸 **Instagram:** [@nicholas.darwin](https://instagram.com/nicholas.darwin)
+- **Email:** ndarwin@uwaterloo.ca
+- **LinkedIn:** linkedin.com/in/nicholas-darwin
+- **Instagram:** @nicholas.darwin
 
-## License
+---
 
-© 2025 Nicholas Darwin. All rights reserved.
+© 2026 Nicholas Darwin. All rights reserved.
 
