@@ -1,19 +1,10 @@
-# Static files - serve directly
-/sitemap.xml           /sitemap.xml  200
-/robots.txt            /robots.txt   200
+# Redirect old /html/* paths to home
+/html/*                / 301
 
-# Asset files - serve directly  
-/assets/*              /assets/:splat 200
-/*.css                 /:splat.css 200
-/*.js                  /:splat.js 200
-
-# Clean URL rewrites
+# Clean URL rewrites (must come before fallback)
 /experience            /experience.html  200
 /projects              /projects.html    200
 /contact               /contact.html     200
 
-# Old HTML paths - redirect to home
-/html/*                / 301
-
-# SPA fallback - only for routes that don't exist
+# SPA fallback - serve index.html for everything else
 /*                     /index.html   200
