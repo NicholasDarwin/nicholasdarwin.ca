@@ -3,9 +3,5 @@
 /experience            /experience.html  200
 /projects              /projects.html    200
 /contact               /contact.html     200
-/experience.html       /experience.html  200
-/projects.html         /projects.html    200
-/contact.html          /contact.html     200
-/index.html            /index.html   200
 /html/*                / 301
 /*                     /index.html   200
