@@ -1,4 +1,8 @@
 User-agent: *
+Disallow: /html/
+Disallow: /experience
+Disallow: /projects
+Disallow: /contact
 Allow: /
 
 Sitemap: https://nicholasdarwin.ca/sitemap.xml

@@ -1,3 +1,13 @@
-/sitemap.xml  /sitemap.xml  200
-/robots.txt   /robots.txt   200
-/*            /index.html   200
+/sitemap.xml           /sitemap.xml  200
+/robots.txt            /robots.txt   200
+/html/experience.html  / 301
+/html/projects.html    / 301
+/html/contact.html     / 301
+/html/*                / 301
+/experience.html       / 301
+/projects.html         / 301
+/contact.html          / 301
+/experience            / 301
+/projects              / 301
+/contact               / 301
+/*                     /index.html   200
