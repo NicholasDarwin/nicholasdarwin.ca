@@ -148,6 +148,8 @@ class Particle {
   constructor(canvas, isInitial = false) {
     this.canvas = canvas;
     this.size = Math.random() * 2 + 2; // 2-4px
+    this.hasBreeze = Math.random() < 0.3; // 30% of particles have breeze
+    this.breezeTime = Math.random() * Math.PI * 2; // Random start phase
     if (isInitial) {
       this.initializeSpread();
     } else {
@@ -156,20 +158,20 @@ class Particle {
   }
 
   initializeSpread() {
-    // On initial page load, spread particles throughout the viewport
-    this.x = Math.random() * (this.canvas.width + 200) + 200;
-    this.y = Math.random() * this.canvas.height; // Spread across full height
+    // On initial page load, spread particles across the full screen height
+    this.x = Math.random() * (this.canvas.width + 400) - 100;
+    this.y = Math.random() * (this.canvas.height + 200) - 100; // Spread across full height
     
     // 50 degrees left-downward
     this.vx = -1.0 * Math.cos(Math.PI / 180 * 50); // ~-0.64
     this.vy = 1.0 * Math.sin(Math.PI / 180 * 50); // ~0.77
     
-    this.speed = Math.random() * 2 + 2;
+    this.speed = Math.random() * 1 + 2; // 2-3 px per frame
   }
 
   reset() {
-    // Spawn particles from the top-right and fall left at 50 degrees
-    this.x = Math.random() * (this.canvas.width + 200) + 200; // Slightly off right edge
+    // Spawn particles from across the full width of the screen
+    this.x = Math.random() * (this.canvas.width + 400) - 100; // Span full width plus overflow
     this.y = Math.random() * 100 - 100; // Slightly above top edge
     
     // 50 degrees left-downward: angle = 180 - 50 = 130 degrees or -50 from horizontal
@@ -178,21 +180,28 @@ class Particle {
     this.vy = 1.0 * Math.sin(Math.PI / 180 * 50); // ~0.77
     
     // Scale speed for visual appeal
-    this.speed = Math.random() * 2 + 2; // 2-4 px per frame ~60fps
+    this.speed = Math.random() * 1 + 2; // 2-3 px per frame (slower)
   }
 
   update(cursorX = null) {
     let vx = this.vx;
     let vy = this.vy;
     
+    // Light breeze effect for some particles
+    if (this.hasBreeze) {
+      this.breezeTime += 0.02; // Advance breeze animation
+      const breezeAmount = Math.sin(this.breezeTime) * 0.3; // Gentle breeze oscillation
+      vx += breezeAmount * 0.3; // Apply breeze (reduced impact)
+    }
+    
     // Adjust direction based on cursor position, but keep speed constant
     if (cursorX !== null) {
       const centerX = this.canvas.width / 2;
       const cursorNormalized = (cursorX - centerX) / centerX; // -1 to 1
       
-      // Map cursor to angle (-50 to 50 degrees from vertical)
-      // Left side: 50 degrees left, Right side: 50 degrees right
-      const angleAdjustment = cursorNormalized * 50; // -50 to 50 degrees
+      // Map cursor to angle (-25 to 25 degrees from vertical)
+      // Left side: 25 degrees left, Right side: 25 degrees right
+      const angleAdjustment = cursorNormalized * 25; // -25 to 25 degrees
       
       // Convert to radians
       const angleRad = (angleAdjustment) * (Math.PI / 180);
