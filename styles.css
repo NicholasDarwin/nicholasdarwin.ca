@@ -4,6 +4,7 @@
 html {
   scroll-behavior: smooth;
   overflow-x: hidden;
+  height: 100%;
 }
 
 :root {
@@ -51,6 +52,7 @@ html {
 body {
   font-family: 'Merriweather', Georgia, 'Times New Roman', Times, serif;
   background: linear-gradient(135deg, var(--bg) 0%, #e8d9f5 100%);
+  background-attachment: fixed;
   color: var(--text);
   line-height: 1.5;
   -webkit-font-smoothing: antialiased;
@@ -64,6 +66,7 @@ body {
 [data-theme="dark"] body {
   background: 
     linear-gradient(135deg, rgba(10, 31, 42, 0.25) 0%, rgba(10, 31, 42, 0.25) 100%),
+  background-attachment: fixed;
     linear-gradient(135deg, #0a1f2a 0%, #ff8c42 99.99%);
 }
 
