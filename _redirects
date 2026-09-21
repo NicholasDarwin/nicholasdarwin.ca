@@ -2,9 +2,7 @@
 /html/*                / 301
 
 # Clean URL rewrites (must come before fallback)
-/experience            /experience.html  200
 /projects              /projects.html    200
-/contact               /contact.html     200
 
 # SPA fallback - serve index.html for everything else
 /*                     /index.html   200

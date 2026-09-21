@@ -13,9 +13,7 @@ class RewriteHandler(http.server.BaseHTTPRequestHandler):
         # Map clean URLs to actual files
         file_map = {
             '/': 'index.html',
-            '/experience': 'experience.html',
             '/projects': 'projects.html',
-            '/contact': 'contact.html',
         }
         
         # Redirect /html/* URLs to home

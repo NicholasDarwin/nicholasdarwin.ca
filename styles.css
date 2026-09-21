@@ -160,6 +160,9 @@ main { max-width: 1000px; margin: 2.5rem auto; padding: 0 1rem; position: relati
 .contact-divider { display: flex; gap: 0; margin-bottom: 1.5rem; align-items: center; justify-content: flex-start; animation: fadeInUp 0.8s ease-out; }
 .contact-item { color: var(--text); text-decoration: none; font-weight: 500; padding: 0; transition: all 0.3s ease; }
 .contact-item:hover { color: var(--accent); }
+.social-link { display: inline-flex; align-items: center; }
+.social-logo { width: 1.15rem; height: 1.15rem; fill: currentColor; transition: transform 0.3s ease; }
+.social-link:hover .social-logo { transform: translateY(-2px); }
 .contact-item:not(:last-child)::after { content: "|"; color: var(--accent); margin: 0 0.4rem; font-weight: 700; }
 .hero .bio { color: var(--muted); margin-bottom: 0.25rem; font-size: 1rem; line-height: 1.6; max-width: 600px; animation: fadeInUp 0.8s ease-out; }
 
